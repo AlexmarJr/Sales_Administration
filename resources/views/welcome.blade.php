@@ -116,7 +116,7 @@
           </a>
           
           <!--GitHub-->
-          <a class="pin-ic" style="margin-right: 50px" href="https://github.com/AlexmarJr">
+          <a class="pin-ic" style="margin-right: 50px" href="https://github.com/AlexmarJr/Sales_Administration">
             <img src="img/github.png"  width=150>
           </a>
         </div>
