@@ -302,11 +302,16 @@ class HomeController extends Controller
                             ->take(1)
                             ->get();
 
-
-            $high_client_buys = DB::table('clientes')
-                                    ->where('id_user', '=', Auth::id())
-                                    ->where('id', '=', $high_buys[0]->id_client)
-                                    ->get();
+            if($high_buys->isEmpty()){
+                $high_client_buys = '';
+            }
+            else{
+                $high_client_buys = DB::table('clientes')
+                ->where('id_user', '=', Auth::id())
+                ->where('id', '=', $high_buys[0]->id_client)
+                ->get();
+                
+            }
   
             $most_purchased_product =  DB::table('clientes')->where('id_user', '=', Auth::id())
                                             ->join('vendas','clientes.id','=','id_client')
@@ -315,10 +320,17 @@ class HomeController extends Controller
                                             ->orderByRaw('COUNT(*) DESC')
                                             ->limit(1)->get();
 
-            $most_purchased_product_count = DB::table('clientes')->where('id_user', '=', Auth::id())
+            if($most_purchased_product->isNotEmpty()){
+                        $most_purchased_product_count = DB::table('clientes')->where('id_user', '=', Auth::id())
                         ->join('vendas','clientes.id','=','id_client')
                         ->where('vendas.product','=', $most_purchased_product[0]->product)
                         ->count();
+            }
+            else{
+                $most_purchased_product_count = '';
+                $most_purchased_product = '';
+            }
+            
             
                         
         return view('geral', compact('alldebt', 'mvp_client','high_client_buys','most_purchased_product','high_buys','most_purchased_product_count'));

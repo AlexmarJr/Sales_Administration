@@ -6,7 +6,7 @@
   <div class="box">
     <div class="content">
     <h2>Valor á receber</h2>
-    <p>R$ {{$alldebt}} De Dividas acumuladas dos clientes</p>
+    <p>@if($alldebt != '') R$ {{$alldebt}} De Dividas acumuladas dos clientes @else Nenhum Registro @endif</p>
       </div>
   </div>
   
@@ -20,7 +20,7 @@
     <div class="box">
       <div class="content">
         <h2>Cliente com mais compras</h2>
-        <p>@if($high_client_buys->isNotEmpty()) {{$high_client_buys[0]->name}} Com {{$high_buys[0]->quant}} Produtos comprados<br> Divida de {{$high_client_buys[0]->divida_total}} @else Sem Detalhes de clientes disponivel! @endif</p>
+        <p>@if($high_client_buys != '') {{$high_client_buys[0]->name}} Com {{$high_buys[0]->quant}} Produtos comprados<br> Divida de {{$high_client_buys[0]->divida_total}} @else Sem Detalhes de clientes disponivel! @endif</p>
       </div>
   </div>
 
