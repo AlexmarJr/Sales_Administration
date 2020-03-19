@@ -25,7 +25,7 @@
                                         <a href="indexGeral"> <img src="img/geral.png" style="display: block;
                                                                             margin-left: auto;
                                                                             margin-right: auto;
-                                                                            width: 70%;"> </a>
+                                                                            width: 16vh;"> </a>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                         <a href="clients"><img src="img/clientes.png" style="display: block;
                                                                             margin-left: auto;
                                                                             margin-right: auto;
-                                                                            width: 70%;"> </a>
+                                                                            width: 20vh;"> </a>
                                     </div>
                                 </div>
                             </div>
@@ -47,13 +47,13 @@
                             <div class="col">
                                 <div class="card">
                                     <div class="card-header" style="text-align: center">
-                                        <h4></h4>
+                                        <h4>Estoque</h4>
                                     </div>
                                     <div class="card-body">
-                                        <a href=""><img src="img/soon.jfif" style="display: block;
+                                        <a href="storage_home"><img src="img/storage.png" style="display: block;
                                                                             margin-left: auto;
                                                                             margin-right: auto;
-                                                                            width: 70%;"> </a>
+                                                                            width: 16vh;"> </a>
                                     </div>
                                 </div>
                             </div>
@@ -99,6 +99,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="w-100"></div>
                         
                             </div>

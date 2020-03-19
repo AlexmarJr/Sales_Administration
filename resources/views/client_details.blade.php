@@ -103,10 +103,10 @@
                     <td style=" text-transform: uppercase;">{{$value->product}}</td>
                     <td>{{$value->original_price}}<span> R$</span></td>
                     <td>{{$value->current_price}}<span> R$</span></td>
-                    <td><a href="{{route('sales_details', $value->id)}}" class="btn btn-primary">Abrir</a>  <a href="{{route('delete_sales', $value->id)}}" class="btn btn-danger" >Excluir</a></td> 
+                    <td><a href="{{route('sales_details', $value->id)}}" class="btn btn-primary">Abrir</a>  <a href="{{route('delete_sales', $value->id)}}" class="btn btn-danger" onclick="return confirm('Voce tem certeza que quer apagar?')" >Excluir</a></td> 
 
                 </tr>
-                            @endforeach
+                @endforeach
             </table>
         </div>
     </div>

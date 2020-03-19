@@ -24,13 +24,19 @@ Route::post('/sale_save', 'HomeController@store_sales')->name('store_sales');
 Route::get('delete/{id?}','HomeController@delete')->name('delete');
 Route::any('client_details/{id?}','HomeController@client_details')->name('client_details');
 Route::any('clients_search','HomeController@search_clients')->name('search_clients');
-
 Route::any('sales_details/{id?}','HomeController@sales_details')->name('sales_details');
 Route::any('sales_delete/{id?}','HomeController@delete_sales')->name('delete_sales');
 Route::any('payment','HomeController@payment')->name('payment');
-
 Route::get('payment/payoff{id?}', 'HomeController@payoff')->name('payoff');
 
-//Geral Routes
 
+//Geral Routes
 Route::get('/indexGeral', 'HomeController@indexGeral')->name('indexGeral');
+
+
+//Storage Routes
+Route::get('storage_home', 'StorageController@index')->name('storage_home');
+Route::post('storage_save', 'StorageController@store_storage')->name('store_storage');
+Route::any('storage_edit/{id?}','StorageController@edit_storage')->name('edit_storage');
+Route::get('delete_store/{id?}','StorageController@delete_product')->name('delete_store');
+Route::any('product/Search','StorageController@search_product')->name('search_product');

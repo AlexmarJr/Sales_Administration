@@ -2,7 +2,14 @@
 
 @section('content')
   <div class="container">
-  
+
+  <div class="box">
+    <div class="content">
+    <h2>Clientes Registrados</h2>
+    <p>@if($clients_count != '')Um total de {{$clients_count}} Clientes registrados @else Nenhum Registro @endif</p>
+      </div>
+  </div>
+
   <div class="box">
     <div class="content">
     <h2>Valor á receber</h2>
@@ -26,11 +33,25 @@
 
   <div class="box">
       <div class="content">
-        <h2>Produtos mais comprado é:</h2>
+        <h2>Produto mais comprado é:</h2>
         <p>@if($most_purchased_product != '')  {{$most_purchased_product[0]->product}} Com {{$most_purchased_product_count}} Compras registradas! @else Sem compras registradas! @endif</p>
       </div>
   </div>
-  
+
+  <div class="box">
+      <div class="content">
+        <h2>Produtos No Estoque</h2>
+        <p>@if($storage_count != ''){{$storage_count}} Produtos em Estoque! @else Sem Produtos registradas! @endif</p>
+      </div>
+  </div>
+
+  <div class="box" style="height: 260px">
+      <div class="content">
+        <h2>Gastos e Lucro</h2>
+        <p>@if($storage_buy != 0) {{$storage_buy}}R$ Gasto com compra de produtos<br> {{$storage_sell}}R$ Preço de venda dos produtos <br> {{$profit}}R$ Previsão de lucro @else Sem compras registradas! @endif</p>
+      </div>
+  </div>
+
 </div>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
@@ -70,7 +91,7 @@
 .container .box {
   position: relative;
   color: #fff;
-  height: 220px;
+  height: 210px;
 /*   border: 1px solid #fff; */
   display: flex;
   align-content: center;
